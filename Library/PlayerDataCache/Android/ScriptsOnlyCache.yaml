@@ -1854,7 +1854,7 @@ ScriptsOnlyBuild:
     className: StageStartButton
   - hash:
       serializedVersion: 2
-      Hash: 3483494d9f232754ada8470b90517d68
+      Hash: 5661c93cd44fb8aad9a74f3631340f13
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraCtrl

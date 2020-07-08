@@ -157,6 +157,7 @@ MonoBehaviour:
   - {fileID: 967492936}
   - {fileID: 1935505756}
   resultUI: {fileID: 1246510960}
+  moveObj: []
 --- !u!4 &65702707
 Transform:
   m_ObjectHideFlags: 0
@@ -641,18 +642,6 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 1438052534}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1205894327 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1205894327, guid: 90ae11a9ac3d4714596ed1f464867e36,
-    type: 3}
-  m_PrefabInstance: {fileID: 158036357166125655}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1663d7329ed215144a69ec6d0d045c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1216981538
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd012a36634fbd9418db157675260bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boll: {fileID: 1205894327}
+  bollObj: {fileID: 2106057709}
+  followCam: 1
 --- !u!1 &1420243143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1126,12 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2420984025189901109, guid: 82d81cf0666241e439843605a0d09bff,
     type: 3}
   m_PrefabInstance: {fileID: 546994277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2106057709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 158036357866248085, guid: 90ae11a9ac3d4714596ed1f464867e36,
+    type: 3}
+  m_PrefabInstance: {fileID: 158036357166125655}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &158036357166125655
 PrefabInstance:

@@ -25,7 +25,7 @@ public class GameMgr : MonoBehaviour
 
         int i_height = Screen.height;
 
-        Screen.SetResolution(i_width/ i_height * 720, 720, true);
+        Screen.SetResolution(i_width/ i_height * 1080, 1080, true);
 
         ball = GameObject.Find("Ball");
         ballCtrl = ball.GetComponent<LaunchCtrl>();
