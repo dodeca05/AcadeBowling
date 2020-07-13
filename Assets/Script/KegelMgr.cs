@@ -11,7 +11,7 @@ public class KegelMgr : MonoBehaviour
     {
         gm=GameObject.Find("GameMgr").GetComponent<GameMgr>();
         isItDown = false;
-        GetComponent<Rigidbody>().centerOfMass = new Vector3(0,1.5f,0);
+        //GetComponent<Rigidbody>().centerOfMass = new Vector3(0,0.5f,0);
     }
 
     // Update is called once per frame

@@ -25,7 +25,7 @@ public class GameMgr : MonoBehaviour
 
         int i_height = Screen.height;
 
-        Screen.SetResolution(i_width/ i_height * 1080, 1080, true);
+        //Screen.SetResolution(i_width/ i_height * 1080, 1080, true);
 
         ball = GameObject.Find("Ball");
         ballCtrl = ball.GetComponent<LaunchCtrl>();
@@ -78,6 +78,7 @@ public class GameMgr : MonoBehaviour
 
     public void AddScore() {
         score++;
+        resultUI.GetComponent<ResultUI>().SetResult(score, kegelLst.Count);
         Debug.Log("Now Score = "+score);
     }
     public int GetScore() {

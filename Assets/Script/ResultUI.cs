@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ResultUI : MonoBehaviour
 {
     public Text title;
-    public GameObject menubtn;
+    public List<GameObject> menubtn;
     public GameObject nextBtn;
     private int score;
     private int maxScore;
@@ -26,18 +26,24 @@ public class ResultUI : MonoBehaviour
         else
             nextBtn.SetActive(false);
 
-        menubtn.SetActive(false);
+        for(int i=0;i<menubtn.Count;i++)
+            menubtn[i].SetActive(false);
+        DrawUI();
     }
     void OnEnable()
     {
-        
+        DrawUI();
 
         //Debug.Log("Display result" + score);
+       
+    }
+    void DrawUI()
+    {
         if (score == 0) title.text = "실패";
         else
         {
             title.text = "클리어\n";
-           
+
             for (int i = 0; i < maxScore; i++)
             {
                 if (i < score)

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MenuUI : MonoBehaviour
 {
     public GameObject pannel;
+    public GameObject optionPannel;
     public Text subTitle;
 
     public Text BGMbuttonText;
@@ -14,8 +15,10 @@ public class MenuUI : MonoBehaviour
     void Start()
     {
         int stageNum=int.Parse(SceneManager.GetActiveScene().name.Substring(1))+1;
-        
-        subTitle.text = "["+ Application.systemLanguage+"]스테이지 " + stageNum;
+
+        optionPannel.SetActive(false);
+        subTitle.text = "["+ Application.systemLanguage+"]스테이지 " + stageNum+" "+Screen.width+" * "+Screen.height;
+        subTitle.fontSize = 15 / 720 * Screen.height;
         pannel.SetActive(false);
         if (!GameObject.Find("BGM").GetComponent<AudioSource>().isPlaying)
             BGMbuttonText.text = "BGM OFF";
@@ -58,6 +61,12 @@ public class MenuUI : MonoBehaviour
 
         
         SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
+    }
+
+    public void OptionButton()
+    {
+        optionPannel.SetActive(true);
+        gameObject.SetActive(false);
     }
   
 

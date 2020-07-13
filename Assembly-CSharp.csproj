@@ -72,6 +72,7 @@
     <Compile Include="Assets\Script\LineTest.cs" />
     <Compile Include="Assets\Script\LobbyMgr.cs" />
     <Compile Include="Assets\Script\MenuUI.cs" />
+    <Compile Include="Assets\Script\OptionUI.cs" />
     <Compile Include="Assets\Script\ResultUI.cs" />
     <Compile Include="Assets\Script\SaveMgr.cs" />
     <Compile Include="Assets\Script\SoundMgr.cs" />
