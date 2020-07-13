@@ -18,10 +18,9 @@ public class MenuUI : MonoBehaviour
 
         optionPannel.SetActive(false);
         subTitle.text = "["+ Application.systemLanguage+"]스테이지 " + stageNum+" "+Screen.width+" * "+Screen.height;
-        subTitle.fontSize = 15 / 720 * Screen.height;
+        //subTitle.fontSize = 60 / 720 * Screen.height;
         pannel.SetActive(false);
-        if (!GameObject.Find("BGM").GetComponent<AudioSource>().isPlaying)
-            BGMbuttonText.text = "BGM OFF";
+        
     }
 
     // Update is called once per frame
@@ -32,15 +31,17 @@ public class MenuUI : MonoBehaviour
     }
 
     public void MenuButton() {
-        if (pannel.active) {
+        if (pannel.active || optionPannel.active) {
             Time.timeScale = 1.0f;
             pannel.SetActive(false);
+            optionPannel.SetActive(false);
             
         }
         else
         {
             Time.timeScale = 0.0f;
             pannel.SetActive(true);
+            
         }
     }
 
@@ -66,7 +67,7 @@ public class MenuUI : MonoBehaviour
     public void OptionButton()
     {
         optionPannel.SetActive(true);
-        gameObject.SetActive(false);
+        pannel.SetActive(false);
     }
   
 

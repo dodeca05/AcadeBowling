@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SaveMgr : MonoBehaviour
 {
-    private const int MAXSTAGE = 16;
+    public const int MAXSTAGE = 1;
 
     // Start is called before the first frame update
     private static SaveMgr instance = null;
@@ -21,7 +21,10 @@ public class SaveMgr : MonoBehaviour
             return instance;
         }
     }
-  
+    private void Start()
+    {
+        
+    }
     void Awake()
     {
         if (null == instance)
@@ -33,6 +36,8 @@ public class SaveMgr : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        
        
     }
 

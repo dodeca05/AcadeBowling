@@ -19,6 +19,8 @@ public class CameraCtrl : MonoBehaviour
         smoothValue = 0f;
 
         offset = new Vector3(0, -55, 30);
+
+        followCam = PlayerPrefs.GetInt("FollowCam") == 1;
     }
 
     // Update is called once per frame

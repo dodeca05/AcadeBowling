@@ -20,7 +20,17 @@ public class LobbyMgr : MonoBehaviour
     private float animate = 0.0f;
     void Start()
     {
+        if (SaveMgr.Instance.GetStage()>SaveMgr.MAXSTAGE)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+        }
 
+
+        if (!PlayerPrefs.HasKey("FollowCam")) 
+        {
+            PlayerPrefs.SetInt("FollowCam", 1);
+        }
         screenHeight = Screen.height;
         screenWidth = Screen.width;
 
@@ -30,7 +40,7 @@ public class LobbyMgr : MonoBehaviour
         aniTargetPosLst = new List<Vector3>();
 
         SetLobby();
-        
+        animate = 0.4f;
     }
 
     public void SetLobby()

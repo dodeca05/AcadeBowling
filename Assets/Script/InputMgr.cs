@@ -78,9 +78,10 @@ public class InputMgr : MonoBehaviour
     }
 
     public bool ClickDown() {
-        bool result;
-        if (IsitTouch)
+        bool result=false;
+        if (IsitTouch && Input.touchCount > 0)
         {
+            
             result = (Input.GetTouch(0).phase == TouchPhase.Began);
         }
         else

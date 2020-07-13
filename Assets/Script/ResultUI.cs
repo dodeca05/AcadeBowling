@@ -26,16 +26,22 @@ public class ResultUI : MonoBehaviour
         else
             nextBtn.SetActive(false);
 
-        for(int i=0;i<menubtn.Count;i++)
-            menubtn[i].SetActive(false);
+        
         DrawUI();
     }
     void OnEnable()
     {
         DrawUI();
-
+        for (int i = 0; i < menubtn.Count; i++)
+            menubtn[i].SetActive(false);
         //Debug.Log("Display result" + score);
-       
+
+    }
+
+    private void OnDisable()
+    {
+        for (int i = 0; i < menubtn.Count; i++)
+            menubtn[i].SetActive(true);
     }
     void DrawUI()
     {
