@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class StageStartButton : MonoBehaviour
 {
+    public Sprite star;
+    public Image star1;
+    public Image star2;
+    public Image star3;
 
     private int stageNum;
     public int StageNum
@@ -34,4 +38,14 @@ public class StageStartButton : MonoBehaviour
         string scene = "S" + stageNum;
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
+    public void SetStar(int score)
+    {
+        if (score >= 1)
+            star1.sprite = star;
+        if (score >= 2)
+            star2.sprite = star;
+        if (score >= 3)
+            star3.sprite = star;
+    }
+
 }

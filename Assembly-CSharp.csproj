@@ -74,11 +74,14 @@
     <Compile Include="Assets\Script\LineTest.cs" />
     <Compile Include="Assets\Script\LobbyMgr.cs" />
     <Compile Include="Assets\Script\MenuUI.cs" />
+    <Compile Include="Assets\Script\MoveHand.cs" />
     <Compile Include="Assets\Script\OptionUI.cs" />
     <Compile Include="Assets\Script\ResultUI.cs" />
     <Compile Include="Assets\Script\SaveMgr.cs" />
+    <Compile Include="Assets\Script\SetWord.cs" />
     <Compile Include="Assets\Script\SoundMgr.cs" />
     <Compile Include="Assets\Script\StageStartButton.cs" />
+    <Compile Include="Assets\Script\TutorialMgr.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

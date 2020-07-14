@@ -9,6 +9,10 @@ public class ResultUI : MonoBehaviour
     public Text title;
     public List<GameObject> menubtn;
     public GameObject nextBtn;
+    public Sprite Star;
+
+    public GameObject[] starts;
+
     private int score;
     private int maxScore;
 
@@ -42,6 +46,8 @@ public class ResultUI : MonoBehaviour
     {
         for (int i = 0; i < menubtn.Count; i++)
             menubtn[i].SetActive(true);
+
+
     }
     void DrawUI()
     {
@@ -50,13 +56,7 @@ public class ResultUI : MonoBehaviour
         {
             title.text = LanguageMgr.Instance.GetWord(LanguageMgr.Lcode.Success);
 
-            for (int i = 0; i < maxScore; i++)
-            {
-                if (i < score)
-                    title.text += "★";
-                else
-                    title.text += "☆";
-            }
+          
         }
     }
     public void NextStage() {
@@ -74,4 +74,8 @@ public class ResultUI : MonoBehaviour
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
+    void Update()
+    {
+        
+    }
 }

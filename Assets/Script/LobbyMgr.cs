@@ -9,6 +9,8 @@ public class LobbyMgr : MonoBehaviour
     // Start is called before the first frame update
     public GameObject buttonPrefab;
     public GameObject uiCanvas;
+    public Sprite clearSp;
+    public Sprite nonClearSp;
 
     private List<GameObject> btnLst;
     private List<Vector3> aniTargetPosLst;
@@ -20,11 +22,12 @@ public class LobbyMgr : MonoBehaviour
     private float animate = 0.0f;
     void Start()
     {
+        /*
         if (SaveMgr.Instance.GetStage()>SaveMgr.MAXSTAGE)
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.Save();
-        }
+        }*/
 
 
         if (!PlayerPrefs.HasKey("FollowCam")) 
@@ -70,8 +73,12 @@ public class LobbyMgr : MonoBehaviour
             aniTargetPosLst.Add(localPos);
             Text tempText = tempButton.GetComponentInChildren<Text>();
             string btnText = (i + 1) + "\n";
-            for (int j = 0; j < SaveMgr.Instance.GetScore(i); j++)
-                btnText += "★";
+            int score = SaveMgr.Instance.GetScore(i);
+            tempButton.GetComponent<StageStartButton>().SetStar(score);
+           
+
+            if (score == 0)
+                tempButton.GetComponent<Image>().sprite = nonClearSp;
             tempText.text = btnText;
 
 
