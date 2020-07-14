@@ -23,6 +23,7 @@ public class LaunchCtrl : MonoBehaviour
         }
     }
     // Update is called once per frame
+
     void Update()
     {
         
@@ -98,4 +99,10 @@ public class LaunchCtrl : MonoBehaviour
     }
 
     public State GetState() { return state; }
+    public void SetAim()
+    {
+        firstPos = InputMgr.Instance.curPosition;
+        state = State.Aiming;
+        Arrow.SetActive(true);
+    }
 }

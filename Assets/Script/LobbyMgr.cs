@@ -31,6 +31,11 @@ public class LobbyMgr : MonoBehaviour
         {
             PlayerPrefs.SetInt("FollowCam", 1);
         }
+
+        if (!PlayerPrefs.HasKey("BallOverLap"))
+        {
+            PlayerPrefs.SetInt("BallOverLap", 1);
+        }
         screenHeight = Screen.height;
         screenWidth = Screen.width;
 

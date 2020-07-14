@@ -45,10 +45,10 @@ public class ResultUI : MonoBehaviour
     }
     void DrawUI()
     {
-        if (score == 0) title.text = "실패";
+        if (score == 0) title.text = LanguageMgr.Instance.GetWord(LanguageMgr.Lcode.Fail);
         else
         {
-            title.text = "클리어\n";
+            title.text = LanguageMgr.Instance.GetWord(LanguageMgr.Lcode.Success);
 
             for (int i = 0; i < maxScore; i++)
             {

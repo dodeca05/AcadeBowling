@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuUI : MonoBehaviour
 {
+    public Text MenuTitleText;
     public GameObject pannel;
     public GameObject optionPannel;
     public Text subTitle;
@@ -14,6 +15,7 @@ public class MenuUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MenuTitleText.text = LanguageMgr.Instance.GetWord(LanguageMgr.Lcode.Menu);
         int stageNum=int.Parse(SceneManager.GetActiveScene().name.Substring(1))+1;
 
         optionPannel.SetActive(false);

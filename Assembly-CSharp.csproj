@@ -64,10 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\AndroidDebug.cs" />
+    <Compile Include="Assets\Script\BallOverlapUI.cs" />
     <Compile Include="Assets\Script\CameraCtrl.cs" />
     <Compile Include="Assets\Script\GameMgr.cs" />
     <Compile Include="Assets\Script\InputMgr.cs" />
     <Compile Include="Assets\Script\KegelMgr.cs" />
+    <Compile Include="Assets\Script\LanguageMgr.cs" />
     <Compile Include="Assets\Script\LaunchCtrl.cs" />
     <Compile Include="Assets\Script\LineTest.cs" />
     <Compile Include="Assets\Script\LobbyMgr.cs" />

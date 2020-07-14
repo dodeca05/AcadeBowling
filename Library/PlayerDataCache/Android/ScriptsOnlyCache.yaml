@@ -1,10 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BallOverlapUI
     - CameraCtrl
     - GameMgr
     - InputMgr
     - KegelMgr
+    - LanguageMgr
     - LaunchCtrl
     - LineTest
     - LobbyMgr
@@ -37,13 +39,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -160,6 +156,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12616}
     - Class: 114
       Script: {instanceID: 12964}
+    - Class: 114
+      Script: {instanceID: 13926}
+    - Class: 114
+      Script: {instanceID: 38400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -251,6 +251,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12616}
     - Class: 114
       Script: {instanceID: 12964}
+    - Class: 114
+      Script: {instanceID: 13926}
+    - Class: 114
+      Script: {instanceID: 38400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -568,7 +572,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 2eec53448281e25b8d7bbde91eb3f68d
+      Hash: f6fd27aa67aec8fc367da66bda5bc74e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OptionUI
@@ -646,7 +650,7 @@ ScriptsOnlyBuild:
     className: LineTest
   - hash:
       serializedVersion: 2
-      Hash: f205c33ce6939cc0ceffac2b79a66609
+      Hash: 80391510c973366b4d453eaa1546a580
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuUI
@@ -788,6 +792,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ccb5cb3320380d404101a6d1fbdb086c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BallOverlapUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LanguageMgr
   platform: 13
   scenePathNames:
   - Assets/Scenes/Lobby.unity
