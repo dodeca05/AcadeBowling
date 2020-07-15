@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class LaunchCtrl : MonoBehaviour
@@ -8,6 +9,7 @@ public class LaunchCtrl : MonoBehaviour
     public GameObject Arrow;
 
     private Vector3 firstPos;
+    private float maxRate = 0.0f;
     // Start is called before the first frame update
 
     private State state;
@@ -58,10 +60,14 @@ public class LaunchCtrl : MonoBehaviour
             float angle = GetAngle(firstPos, InputMgr.Instance.curPosition);
             float dis = Vector3.Distance(firstPos, InputMgr.Instance.curPosition);            
             float rate = dis / Mathf.Min(Screen.height,Screen.width);
+            float temp_mr = Mathf.Max(maxRate, rate);
+            if (rate > Mathf.Max(0.3f,maxRate))
+                rate = Mathf.Max(0.3f, maxRate);
 
-            if (rate > 0.3)
-                rate = 0.3f;
-            rate /= 0.3f;
+            rate /= Mathf.Max(0.3f, maxRate);
+            rate /= 0.9f;
+            rate = Mathf.Min(rate, 1.0f);
+            maxRate = temp_mr;
             Vector3 eurAngle = transform.eulerAngles;
             eurAngle.y = -angle;
             transform.eulerAngles = eurAngle;

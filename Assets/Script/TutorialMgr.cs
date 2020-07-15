@@ -44,7 +44,7 @@ public class TutorialMgr : MonoBehaviour
         if (tutorialEx != null)
         {
             tutorialEx.transform.SetParent(transform);
-            tutorialEx.transform.localPosition = new Vector3(Xpos, Ypos);
+            tutorialEx.transform.localPosition = new Vector3(Xpos, Ypos)/1080* screenHeight;
         }
     }
 

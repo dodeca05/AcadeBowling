@@ -30,8 +30,6 @@ public class CameraCtrl : MonoBehaviour
         {
             Vector3 curmovedis=InputMgr.Instance.curMoveDis;
          
-            //float Mx = Input.GetAxis("Mouse X");//마우스 좌우
-            //float My = Input.GetAxis("Mouse Y");//마우스 상하
             float Mx = curmovedis.x;
             float My = curmovedis.y;
             

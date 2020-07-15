@@ -102,7 +102,8 @@ public class ResultUI : MonoBehaviour
             {
                 ani_val = ani_init;
                 fin_ani += 1;
-                if(fin_ani<maxScore)
+                if (fin_ani < maxScore)
+                    ani_target.sizeDelta = new Vector3(200, 200);
                     ani_target = starts[fin_ani].GetComponent<RectTransform>();
             }
             float temp = ani_val - (ani_init / 2);

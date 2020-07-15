@@ -45,7 +45,7 @@ public class GameMgr : MonoBehaviour
             if (coolTime < 1.5f) {
                 return;
             }
-            if (ballForce.magnitude < 1.0f || ball.transform.position.y < -10 || score==kegelLst.Count)
+            if (ballForce.magnitude < 1.0f || ball.transform.position.y < -10 || score>0)
             {
                 float vSum = 0.0f;
                 foreach (Rigidbody temp in kegelLst)
@@ -64,7 +64,7 @@ public class GameMgr : MonoBehaviour
                 
                 }
 
-                if (((ballForce.magnitude < 1.0f   || vSum < 0.2f ) || score == kegelLst.Count || ball.transform.position.y < -10)&& objStop)
+                if (((ballForce.magnitude < 1.0f   || vSum < 0.2f ) || score >0 || ball.transform.position.y < -10)&& objStop)
                 {
                     resultUI.GetComponent<ResultUI>().SetResult(score, kegelLst.Count);
                     Debug.Log("setResult" + score + kegelLst.Count);

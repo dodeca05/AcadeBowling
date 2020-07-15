@@ -9,6 +9,8 @@ public class LobbyMgr : MonoBehaviour
     // Start is called before the first frame update
     public GameObject buttonPrefab;
     public GameObject uiCanvas;
+    public GameObject leftArrow;
+    public GameObject rightArrow;
     public Sprite clearSp;
     public Sprite nonClearSp;
 
@@ -29,7 +31,7 @@ public class LobbyMgr : MonoBehaviour
             PlayerPrefs.DeleteAll();
             PlayerPrefs.Save();
         }*/
-
+        //PlayerPrefs.DeleteAll();
 
         if (!PlayerPrefs.HasKey("FollowCam")) 
         {
@@ -50,6 +52,11 @@ public class LobbyMgr : MonoBehaviour
 
         SetLobby();
         animate = 0.4f;
+
+        rightArrow.transform.localPosition = new Vector3(screenHeight+(screenWidth - screenHeight)/2 , 0)/2;
+
+        leftArrow.transform.localPosition = rightArrow.transform.localPosition * -1;
+        
     }
 
     public void SetLobby()
@@ -84,6 +91,13 @@ public class LobbyMgr : MonoBehaviour
 
 
         }
+
+
+        if (page == 0) leftArrow.SetActive(false);
+        else leftArrow.SetActive(true);
+
+        if (page == maxPage) rightArrow.SetActive(false);
+        else rightArrow.SetActive(true);
         
         
     }
