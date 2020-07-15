@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LanguageMgr : MonoBehaviour
 {
-    public enum Lcode { Menu,Setting,Fail,Success,Restart,Back2L,Back2M,NextStage,T1};
+    public enum Lcode { Menu,Setting,Fail,Success,Restart,Back2L,Back2M,NextStage,T1,T2,T3,T4};
     // Start is called before the first frame update
     private SystemLanguage contury;
 
@@ -68,9 +68,17 @@ public class LanguageMgr : MonoBehaviour
                     result = "다음 스테이지";
                     break;
                 case Lcode.T1:
-                    result = "공을 드래그 하여 조준하고 파워를 조절할 수 있습니다.\n공을 발사시켜 볼링핀을 모두 넘어뜨리세요";
+                    result = "공을 드래그하여 조준하고 파워를 조절할 수 있습니다.\n공을 발사시켜 볼링핀을 모두 넘어뜨리세요";
                     break;
-                
+                case Lcode.T2:
+                    result = "맵은 드래그하여 이동하거나 축소시킬 수 있습니다.";
+                    break;
+                case Lcode.T3:
+                    result = "노란색 오브젝트는 외부충격에 움직입니다. 이를 이용해서 클리어 해보세요";
+                    break;
+                case Lcode.T4:
+                    result = "공의 오버랩, 카메라 따라가기, BGM은 일시정지 메뉴의 설정에서 켜고 끌 수 있습니다.";
+                    break;
                 
             }
         }

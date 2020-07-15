@@ -12,6 +12,7 @@ public class LobbyMgr : MonoBehaviour
     public Sprite clearSp;
     public Sprite nonClearSp;
 
+    private const int STAGE_PER_PAGE=20;
     private List<GameObject> btnLst;
     private List<Vector3> aniTargetPosLst;
     private int page = 0;
@@ -42,7 +43,7 @@ public class LobbyMgr : MonoBehaviour
         screenHeight = Screen.height;
         screenWidth = Screen.width;
 
-        maxPage = Mathf.Max((SaveMgr.Instance.GetStage()-1) / 25,0);
+        maxPage = Mathf.Max((SaveMgr.Instance.GetStage()-1) / STAGE_PER_PAGE,0);
         Debug.Log("MaxPage=" + maxPage);
         btnLst = new List<GameObject>();
         aniTargetPosLst = new List<Vector3>();
@@ -59,10 +60,10 @@ public class LobbyMgr : MonoBehaviour
         
         int ScH = screenHeight;
         int ScW = screenWidth;
-        for (int i = 25 * page; i <= Mathf.Min(stage, 25 * (page+1)-1); i++)
+        for (int i = STAGE_PER_PAGE * page; i <= Mathf.Min(stage, STAGE_PER_PAGE * (page+1)-1); i++)
         {
-            int row = (i%25) % 5 - 2;
-            int col = (i%25) / 5 - 2;
+            int row = (i% STAGE_PER_PAGE) % 5 - 2;
+            int col = (i% STAGE_PER_PAGE) / 5 - 2;
             int temp = Mathf.Min(ScH, ScW) / 5;
             GameObject tempButton = Instantiate(buttonPrefab);
             btnLst.Add(tempButton);

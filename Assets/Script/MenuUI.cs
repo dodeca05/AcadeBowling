@@ -16,10 +16,10 @@ public class MenuUI : MonoBehaviour
     void Start()
     {
         MenuTitleText.text = LanguageMgr.Instance.GetWord(LanguageMgr.Lcode.Menu);
-        int stageNum=int.Parse(SceneManager.GetActiveScene().name.Substring(1))+1;
+        int stageNum=int.Parse(SceneManager.GetActiveScene().name.Substring(1));
 
         optionPannel.SetActive(false);
-        subTitle.text = "["+ Application.systemLanguage+"]스테이지 " + stageNum+" "+Screen.width+" * "+Screen.height;
+        subTitle.text = (stageNum/20+1) +"-"+(stageNum%20+1);
         //subTitle.fontSize = 60 / 720 * Screen.height;
         pannel.SetActive(false);
         

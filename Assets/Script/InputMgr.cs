@@ -106,7 +106,8 @@ public class InputMgr : MonoBehaviour
         return result;
     }
     // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
         Vector3 temp = curPositionValue;
         if (IsitTouch) 

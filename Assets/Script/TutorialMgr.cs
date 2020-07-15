@@ -10,7 +10,8 @@ public class TutorialMgr : MonoBehaviour
     public int Xpos;
     public int Ypos;
     public Transform spotLightTarget;
-    public bool targetIsUI;
+    public int spXpos;
+    public int spYpos;
 
     private int screenHeight;
     private int screenWidth;
@@ -24,18 +25,21 @@ public class TutorialMgr : MonoBehaviour
         screenWidth = Screen.width;
         GameObject ui=GameObject.Find("UI");
         transform.SetParent(ui.transform);
-        if (!targetIsUI)
+
+        if (spXpos==0 && spYpos==0)
         {
             spotLightPos = Camera.main.WorldToScreenPoint(spotLightTarget.position);
+            //spotLightPos = spotLightTarget.localPosition;
+            Debug.Log("스포트라이트 작동"+spotLightPos);
+            spotLightPos.z = 0;
             spotLightPos.x -= screenWidth / 2;
             spotLightPos.y -= screenHeight / 2;
+            transform.localPosition = spotLightPos;
         }
         else
-            spotLightPos = spotLightTarget.localPosition;
-
-               
-        spotLightPos.z = 0;
-        transform.localPosition = spotLightPos;
+        {
+            transform.localPosition = new Vector3(spXpos, spYpos);
+        }
 
         if (tutorialEx != null)
         {

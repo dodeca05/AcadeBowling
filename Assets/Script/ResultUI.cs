@@ -13,12 +13,26 @@ public class ResultUI : MonoBehaviour
 
     public GameObject[] starts;
 
+    private RectTransform ani_target;
+
     private int score;
     private int maxScore;
 
-    
+    private int fin_ani;
+
+    private const float ani_init=0.5f;
+    private float ani_val;
+
+    private void Start()
+    {
+        fin_ani = 0;
+        ani_val = ani_init;
+        ani_target = starts[0].GetComponent<RectTransform>();
+    }
     public void SetResult(int score,int maxScore=3)
     {
+        
+
         this.score = score;
         this.maxScore = maxScore;
 
@@ -76,6 +90,24 @@ public class ResultUI : MonoBehaviour
 
     void Update()
     {
-        
+        if (score > fin_ani)
+        {
+
+            if (ani_val - Time.deltaTime < ani_init / 2)
+            {
+                starts[fin_ani].GetComponent<Image>().sprite = Star;
+            }
+            ani_val -= Time.deltaTime;
+            if (ani_val <= 0.0f)
+            {
+                ani_val = ani_init;
+                fin_ani += 1;
+                if(fin_ani<maxScore)
+                    ani_target = starts[fin_ani].GetComponent<RectTransform>();
+            }
+            float temp = ani_val - (ani_init / 2);
+            temp /= (ani_init / 2);
+            ani_target.sizeDelta = new Vector3(200, 200) * (temp * temp);
+        }
     }
 }
