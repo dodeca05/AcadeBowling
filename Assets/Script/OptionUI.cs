@@ -92,12 +92,15 @@ public class OptionUI : MonoBehaviour
         {
             BGMbuttonText.text = "BGM OFF";
             GameObject.Find("BGM").GetComponent<AudioSource>().Pause();
+            PlayerPrefs.SetInt("BGM", 0);
         }
         else
         {
             BGMbuttonText.text = "BGM ON";
             GameObject.Find("BGM").GetComponent<AudioSource>().Play();
+            PlayerPrefs.SetInt("BGM", 1);
         }
+        PlayerPrefs.Save();
 
     }
     public void BackToMenuButton()

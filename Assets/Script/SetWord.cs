@@ -10,10 +10,20 @@ public class SetWord : MonoBehaviour
  
     void OnEnable()
     {
-        
-        GetComponent<UnityEngine.UI.Text>().text = LanguageMgr.Instance.GetWord(thisWordCode);
-    }
 
+        StartCoroutine(LoadWait());
+    }
+    IEnumerator LoadWait()
+    {
+        while (LanguageMgr.Instance == null)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        GetComponent<UnityEngine.UI.Text>().text = LanguageMgr.Instance.GetWord(thisWordCode);
+
+
+    }
     // Update is called once per frame
-   
+
 }

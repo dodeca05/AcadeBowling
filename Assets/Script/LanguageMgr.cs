@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LanguageMgr : MonoBehaviour
 {
-    public enum Lcode { Menu,Setting,Fail,Success,Restart,Back2L,Back2M,NextStage,T1,T2,T3,T4};
+    public enum Lcode { Menu,Setting,Fail,Success,Restart,Back2L,Back2M,NextStage,T1,T2,T3,T4,T5,T6,Update};
     // Start is called before the first frame update
     private SystemLanguage contury;
 
@@ -79,6 +79,15 @@ public class LanguageMgr : MonoBehaviour
                 case Lcode.T4:
                     result = "공의 오버랩, 카메라 따라가기, BGM은 일시정지 메뉴의 설정에서 켜고 끌 수 있습니다.";
                     break;
+                case Lcode.T5:
+                    result = "빨간색 오브젝트는 공에게 더 큰 힘을 줌니다. 이를 이용해서 클리어 해보세요";
+                    break;
+                case Lcode.T6:
+                    result = "분횡색 오브젝트에 닿는 모든 물체는 더 큰 힘을 가해줍니다. 이를 이용해서 클리어 해보세요";
+                    break;
+                case Lcode.Update:
+                    result = "곧 업데이트 됩니다.";
+                    break;
                 
             }
         }
@@ -109,6 +118,29 @@ public class LanguageMgr : MonoBehaviour
                     break;
                 case Lcode.NextStage:
                     result = "Next Stage";
+                    break;
+
+                case Lcode.T1:
+                    result = "You can drag the ball to aim and adjust power.\nFire all bowling pins by firing the ball";
+                    break;
+                case Lcode.T2:
+                    result = "The map can be moved or collapsed by dragging.";
+                    break;
+                case Lcode.T3:
+                    result = "The yellow object is moved by external impact. Try to clear it using this.";
+                    break;
+                case Lcode.T4:
+                    result = "Ball overlap, camera follow, and BGM can be turned on and off in the settings of the pause menu.";
+                    break;
+                case Lcode.T5:
+                    result = "The red object gives the ball more power. Try to clear it using this";
+                    break;
+                case Lcode.T6:
+                    result = "Any object that touches a pink object exerts more force. Try to clear it using this";
+                    break;
+
+                case Lcode.Update:
+                    result = "Will be updated soon.";
                     break;
 
             }

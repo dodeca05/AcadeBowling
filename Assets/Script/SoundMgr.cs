@@ -27,6 +27,19 @@ public class SoundMgr : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (!PlayerPrefs.HasKey("BGM"))
+        {
+            PlayerPrefs.SetInt("BGM", 1);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("BGM") == 0)
+                GetComponent<AudioSource>().Stop();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

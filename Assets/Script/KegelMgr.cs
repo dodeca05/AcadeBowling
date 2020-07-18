@@ -38,11 +38,11 @@ public class KegelMgr : MonoBehaviour
             rz = 360 - rz;
 
         }
-        Debug.Log(gameObject.name +" "+ rx +" "+ ry);
+        //Debug.Log(gameObject.name +" "+ rx +" "+ ry);
         if (isItDown==false && (Mathf.Abs(rz)>=30 || Mathf.Abs(rx) >= 30  || Mathf.Abs(ry) >= 30 || GetComponent<Rigidbody>().velocity.magnitude>5.0f))
         {
-            Debug.Log(gameObject.name + "is goal"+rx+" "+ry);
-            Debug.Log(Mathf.Abs(transform.eulerAngles.x) +"/"+Mathf.Abs(transform.eulerAngles.z));
+            //Debug.Log(gameObject.name + "is goal"+rx+" "+ry);
+            //Debug.Log(Mathf.Abs(transform.eulerAngles.x) +"/"+Mathf.Abs(transform.eulerAngles.z));
             isItDown = true;
             gm.AddScore();
         }

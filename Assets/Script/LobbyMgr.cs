@@ -11,6 +11,7 @@ public class LobbyMgr : MonoBehaviour
     public GameObject uiCanvas;
     public GameObject leftArrow;
     public GameObject rightArrow;
+    public GameObject updateNote;
     public Sprite clearSp;
     public Sprite nonClearSp;
 
@@ -32,6 +33,8 @@ public class LobbyMgr : MonoBehaviour
             PlayerPrefs.Save();
         }*/
         //PlayerPrefs.DeleteAll();
+
+        
 
         if (!PlayerPrefs.HasKey("FollowCam")) 
         {
@@ -56,7 +59,13 @@ public class LobbyMgr : MonoBehaviour
         rightArrow.transform.localPosition = new Vector3(screenHeight+(screenWidth - screenHeight)/2 , 0)/2;
 
         leftArrow.transform.localPosition = rightArrow.transform.localPosition * -1;
-        
+        Time.timeScale = 1.0f;
+
+        PlayerPrefs.Save();
+
+
+
+        GameObject.Find("ADS").GetComponent<ADMgr>().BannerShow();
     }
 
     public void SetLobby()
@@ -67,7 +76,8 @@ public class LobbyMgr : MonoBehaviour
         
         int ScH = screenHeight;
         int ScW = screenWidth;
-        for (int i = STAGE_PER_PAGE * page; i <= Mathf.Min(stage, STAGE_PER_PAGE * (page+1)-1); i++)
+        int lastPage = Mathf.Min(stage, STAGE_PER_PAGE * (page + 1) - 1);
+        for (int i = STAGE_PER_PAGE * page; i <= lastPage; i++)
         {
             int row = (i% STAGE_PER_PAGE) % 5 - 2;
             int col = (i% STAGE_PER_PAGE) / 5 - 2;
@@ -92,6 +102,10 @@ public class LobbyMgr : MonoBehaviour
 
         }
 
+        if (lastPage == stage && PlayerPrefs.GetInt("S" + stage) > 0)
+            updateNote.SetActive(true);
+        else
+            updateNote.SetActive(false);
 
         if (page == 0) leftArrow.SetActive(false);
         else leftArrow.SetActive(true);
@@ -138,8 +152,9 @@ public class LobbyMgr : MonoBehaviour
         {
             
             Vector3 temp=InputMgr.Instance.curPosition;
+            Debug.Log(temp);
             Debug.Log(screenWidth - screenHeight / 2);
-            if (temp.x < screenWidth / 2 - screenHeight / 2)
+            if (temp.x < Screen.width / 2 - Screen.height / 2)
             {
                 Debug.Log("Left");
                 if (page > 0)

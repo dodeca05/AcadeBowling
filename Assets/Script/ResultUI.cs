@@ -74,6 +74,8 @@ public class ResultUI : MonoBehaviour
         }
     }
     public void NextStage() {
+
+        GameObject.Find("ADS").GetComponent<ADMgr>().AddCount(2);
         string scene ="S"+(int.Parse(SceneManager.GetActiveScene().name.Substring(1))+1);
         //Load it
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
@@ -102,8 +104,9 @@ public class ResultUI : MonoBehaviour
             {
                 ani_val = ani_init;
                 fin_ani += 1;
-                if (fin_ani < maxScore)
+                if (fin_ani <maxScore)
                     ani_target.sizeDelta = new Vector3(200, 200);
+                if(fin_ani<3)
                     ani_target = starts[fin_ani].GetComponent<RectTransform>();
             }
             float temp = ani_val - (ani_init / 2);

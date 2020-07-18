@@ -30,7 +30,7 @@ public class TutorialMgr : MonoBehaviour
         {
             spotLightPos = Camera.main.WorldToScreenPoint(spotLightTarget.position);
             //spotLightPos = spotLightTarget.localPosition;
-            Debug.Log("스포트라이트 작동"+spotLightPos);
+            //Debug.Log("스포트라이트 작동"+spotLightPos);
             spotLightPos.z = 0;
             spotLightPos.x -= screenWidth / 2;
             spotLightPos.y -= screenHeight / 2;

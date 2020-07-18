@@ -9,7 +9,7 @@ public class InputMgr : MonoBehaviour
     // Start is called before the first frame update
     private bool IsitTouch;
     private float finger_distance;
-
+    private int beforeTouchCount = 0;
     private Vector3 curPositionValue;
     public Vector3 curPosition
     {
@@ -115,11 +115,13 @@ public class InputMgr : MonoBehaviour
             if (Input.touchCount > 0)
             {
                 curPositionValue = Input.GetTouch(0).position;
-                if (Input.GetTouch(0).phase == TouchPhase.Moved)
+                if (Input.touchCount != beforeTouchCount)
+                    curMoveDisValue = Vector3.zero;
+                else if (Input.GetTouch(0).phase == TouchPhase.Moved)
                     curMoveDisValue = curPositionValue - temp;
                 else
                     curMoveDisValue = Vector3.zero;
-
+                
                 if (Input.touchCount > 1)
                 {
                     float temp_dis = Vector3.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
@@ -135,6 +137,11 @@ public class InputMgr : MonoBehaviour
                 }
                 else
                 {
+
+                    if (zoomvalue != 0)
+                    {
+                        curMoveDisValue = Vector3.zero;
+                    }
                     zoomvalue = 0;
 
                 }
@@ -142,7 +149,9 @@ public class InputMgr : MonoBehaviour
             else
             {
                 zoomvalue = 0;
+                curMoveDisValue = Vector3.zero;
             }
+            beforeTouchCount = Input.touchCount;
 
 
 

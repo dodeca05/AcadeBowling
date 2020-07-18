@@ -18,7 +18,7 @@ public class ArrowGage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < gages.Count; i++)
+        for (int i = 1; i < gages.Count; i++)
         {
             if (tr.localScale.x >= (float)1 / gages.Count * (i + 1))
             {

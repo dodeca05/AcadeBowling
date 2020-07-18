@@ -10,6 +10,8 @@ public class GameMgr : MonoBehaviour
     public List<GameObject> moveObj;
 
 
+
+ 
     private GameObject ball;
     private LaunchCtrl ballCtrl;
     private Rigidbody ballRig;
@@ -19,6 +21,14 @@ public class GameMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.Android)
+        {
+            ADMgr ad = GameObject.Find("ADS").GetComponent<ADMgr>();
+            ad.AddCount();
+            ad.BannerHide();
+        }
+        
 
         Time.timeScale = 1.0f;
         int i_width = Screen.width;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SaveMgr : MonoBehaviour
 {
-    public const int MAXSTAGE = 19;
+    public const int MAXSTAGE = 33;
 
     // Start is called before the first frame update
     private static SaveMgr instance = null;

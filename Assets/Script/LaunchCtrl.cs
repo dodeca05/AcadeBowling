@@ -57,14 +57,14 @@ public class LaunchCtrl : MonoBehaviour
 
             //float angle = GetAngle(firstPos, Input.mousePosition);
             //float dis = Vector3.Distance(firstPos, Input.mousePosition);
-            float angle = GetAngle(firstPos, InputMgr.Instance.curPosition);
+            float angle = GetAngle(firstPos, InputMgr.Instance.curPosition)+180.0f;
             float dis = Vector3.Distance(firstPos, InputMgr.Instance.curPosition);            
             float rate = dis / Mathf.Min(Screen.height,Screen.width);
             float temp_mr = Mathf.Max(maxRate, rate);
-            if (rate > Mathf.Max(0.3f,maxRate))
-                rate = Mathf.Max(0.3f, maxRate);
+            if (rate > Mathf.Max(0.2f,maxRate))
+                rate = Mathf.Max(0.2f, maxRate);
 
-            rate /= Mathf.Max(0.3f, maxRate);
+            rate /= Mathf.Max(0.2f, maxRate);
             rate /= 0.9f;
             rate = Mathf.Min(rate, 1.0f);
             maxRate = temp_mr;
@@ -110,5 +110,9 @@ public class LaunchCtrl : MonoBehaviour
         firstPos = InputMgr.Instance.curPosition;
         state = State.Aiming;
         Arrow.SetActive(true);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        GetComponent<AudioSource>().Play();
     }
 }
