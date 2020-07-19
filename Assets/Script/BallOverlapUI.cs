@@ -55,7 +55,7 @@ public class BallOverlapUI : MonoBehaviour
 
             transform.localPosition = overlapPos;
 
-            if (Vector3.Distance(Camera.main.transform.position, ball.transform.position) < 50.0f)
+            if (Vector3.Distance(Camera.main.transform.position, ball.transform.position) < 10.0f)
             {
                 overlabOn = false;
             }
